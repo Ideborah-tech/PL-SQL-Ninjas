@@ -73,3 +73,34 @@ SELECT * FROM RankedEmployees WHERE Rank <= 3;
 
 -- Handling duplicates:
 -- RANK() ensures employees with the same salary receive the same rank, preventing unintended omissions.
+-- 4. Finding the First 2 Records per Department
+-- Retrieving the earliest 2 employees based on join date
+WITH EarliestEmployees AS (
+    SELECT 
+        EmployeeID, 
+        EmployeeName, 
+        Department, 
+        JoinDate,
+        ROW_NUMBER() OVER (PARTITION BY Department ORDER BY JoinDate) AS rn
+    FROM Employees
+)
+SELECT * FROM EarliestEmployees
+WHERE rn <= 2;
+
+-- Explanation:
+-- ROW_NUMBER() assigns a unique row number starting from the earliest join date in each department.
+
+-- 5. Aggregation with Window Functions
+-- Selecting all records and calculating category-wise and overall maximum salary
+SELECT 
+    EmployeeID, 
+    EmployeeName, 
+    Department, 
+    Salary,
+    MAX(Salary) OVER (PARTITION BY Department) AS MaxSalaryPerDept,
+    MAX(Salary) OVER () AS MaxSalaryOverall
+FROM Employees;
+
+-- Explanation:
+-- MAX(Salary) OVER (PARTITION BY Department) finds the max salary per department.
+-- MAX(Salary) OVER () finds the highest salary among all employees.
