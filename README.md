@@ -23,7 +23,7 @@ This gave us enough structure to analyze trends, rank employees, and compare dat
 
 ---
 
-## 🔍 Task 1: Compare Salaries Using `LAG()` and `LEAD()`
+##  Task 1: Compare Salaries Using `LAG()` and `LEAD()`
 
 ### ✨ Explanation:
 We compared each employee's salary with the previous and next employee (within their department) using `LAG()` and `LEAD()`. A `CASE` statement then labeled each salary as **HIGHER**, **LOWER**, or **EQUAL** compared to the previous one.
@@ -41,7 +41,7 @@ HR teams can use this logic to spot salary inconsistencies, monitor fairness, or
 
 ---
 
-## 🥇 Task 2: Rank Employees Using `RANK()` and `DENSE_RANK()`
+##  Task 2: Rank Employees Using `RANK()` and `DENSE_RANK()`
 
 ### ✨ Explanation:
 We ranked employees by salary within their departments.  
@@ -61,7 +61,7 @@ This method is commonly used in performance evaluation, promotions, and bonus ca
 
 ---
 
-## 🏆 Task 3: Top 3 Salaries per Department Using `RANK()`
+##  Task 3: Top 3 Salaries per Department Using `RANK()`
 
 ### ✨ Explanation:
 Using a **CTE (Common Table Expression)** with `RANK()`, we retrieved the top 3 highest-paid employees in each department.
@@ -78,7 +78,7 @@ Helpful in identifying top performers in a team for rewards, promotions, or reco
 
 ---
 
-## ⏱️ Task 4: First 2 Joiners per Department Using `ROW_NUMBER()`
+##  Task 4: First 2 Joiners per Department Using `ROW_NUMBER()`
 
 ### ✨ Explanation:
 We used `ROW_NUMBER()` to assign a unique rank to each employee based on their `JoinDate` within their department — and selected the first two joiners.
@@ -95,7 +95,7 @@ Useful for tracking seniority, celebrating work anniversaries, or allocating exp
 
 ---
 
-## 📊 Task 5: Department vs Overall Max Salary Using `MAX()`
+##  Task 5: Department vs Overall Max Salary Using `MAX()`
 
 ### ✨ Explanation:
 We calculated:
@@ -105,8 +105,8 @@ We calculated:
 This let us compare individual salaries with both their team’s top salary and the organization’s.
 
 ### 🔬 Findings:
-- Each row showed both the department’s and company’s max salary.
-- Helped benchmark employee earnings clearly.
+- Each row showed both the department’s and the company’s max salary.
+- Helped benchmark employee earnings.
 
 ### 🌍 Real-Life Application:
 Often used in salary reports, dashboards, and compensation benchmarking to compare salaries across and within departments.
