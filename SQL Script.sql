@@ -57,3 +57,19 @@ SELECT
     RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) AS Rank,
     DENSE_RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) AS DenseRank
 FROM Employees;
+
+-- 3. Identifying Top 3 Records per Department
+-- Fetching top 3 highest salaries per department
+WITH RankedEmployees AS (
+    SELECT 
+        EmployeeID, 
+        EmployeeName, 
+        Department, 
+        Salary,
+        RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) AS Rank
+    FROM Employees
+)
+SELECT * FROM RankedEmployees WHERE Rank <= 3;
+
+-- Handling duplicates:
+-- RANK() ensures employees with the same salary receive the same rank, preventing unintended omissions.
