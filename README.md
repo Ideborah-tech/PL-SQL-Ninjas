@@ -2,7 +2,7 @@
 
 This is our submission for the **SQL Window Functions Assignment** in the course **INSY 8311: Database Development with PL/SQL**. In this project, we used a sample employee dataset to explore the power of **SQL window functions** for advanced analytics, such as ranking, comparisons, and aggregation.
 
-> 👩‍🎓 Team Members: INGABIRE Deborah & UMUTONI Gisele  
+> 👩‍🎓 Team Members: INGABIRE Deborah(26844) & UMUTONI Gisele(26946)  
 > 👨‍🏫 Instructor GitHub: `@ericmaniraguha`
 
 ---
